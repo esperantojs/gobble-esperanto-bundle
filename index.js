@@ -18,7 +18,7 @@ module.exports = function esperantoBundle ( inputdir, outputdir, options, callba
 
 	esperanto.bundle( options ).then( function ( bundle ) {
 		var result = bundle[ method ]( options ),
-			dest = path.join( outputdir, ( options.dest || options.entry ) + '.js' );
+			dest = path.join( outputdir, ( options.dest || options.entry ).replace( /\.js$/, '' ) + '.js' );
 
 		fs.writeFile( dest, result, callback );
 	}).catch( callback );
