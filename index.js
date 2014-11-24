@@ -4,22 +4,33 @@ var methods = {
 	umd: 'toUmd'
 };
 
-module.exports = function esperantoBundle ( inputdir, outputdir, options, callback ) {
-	var fs = require( 'fs' ),
+module.exports = function esperantoBundle ( inputdir, outputdir, options ) {
+	var sander = require( 'sander' ),
 		path = require( 'path' ),
 		esperanto = require( 'esperanto' ),
-		method = methods[ options.type ] || 'toAmd';
+		method = methods[ options.type ] || 'toAmd',
+		dest;
 
 	if ( !options.entry ) {
 		throw new Error( "The gobble-esperanto-bundle config must specify an entry module (e.g. `{ entry: 'main' }`)" );
 	}
 
 	options.base = path.join( inputdir, options.base || '' );
+	dest = ( options.dest || options.entry ).replace( /\.js$/, '' ) + '.js';
 
-	esperanto.bundle( options ).then( function ( bundle ) {
-		var result = bundle[ method ]( options ),
-			dest = path.join( outputdir, ( options.dest || options.entry ) + '.js' );
+	if ( options.sourceMap ) {
+		options.sourceMapFile = dest;
+	}
 
-		fs.writeFile( dest, result, callback );
-	}).catch( callback );
+	return esperanto.bundle( options ).then( function ( bundle ) {
+		var result = bundle[ method ]( options ), promises = [];
+
+		promises.push( sander.writeFile( outputdir, dest, result.code ) );
+
+		if ( result.map ) {
+			promises.push( sander.writeFile( outputdir, dest + '.map', result.map.toString() ) );
+		}
+
+		return sander.Promise.all( promises );
+	});
 };

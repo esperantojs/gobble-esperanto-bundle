@@ -6,7 +6,8 @@
   "license": "MIT",
   "repository": "https://github.com/gobblejs/gobble-esperanto-bundle",
   "dependencies": {
-    "esperanto": "^0.4.0"
+    "esperanto": "^0.4.2",
+    "sander": "^0.2.1"
   },
   "keywords": [
     "gobble",

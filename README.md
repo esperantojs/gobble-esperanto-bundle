@@ -31,6 +31,8 @@ You can specify a `type` of module:
 * `type: 'cjs'` - CommonJS, for use in node or with [Browserify](http://browserify.org/)
 * `type: 'umd'` - Universal Module Definition. Works as AMD, CommonJS, or browser global. You must supply a `name` option for the global export.
 
+To generate a sourcemap, use `sourceMap: true`, or `sourceMap: 'inline'` to append the sourcemap to the bundle as a data URI.
+
 For [strict mode](https://github.com/Rich-Harris/esperanto/wiki/Strict-mode) output, pass `strict: true`.
 
 
