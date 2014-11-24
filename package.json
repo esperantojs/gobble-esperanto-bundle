@@ -1,6 +1,6 @@
 {
   "name": "gobble-esperanto-bundle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bundle ES6 modules with gobble and esperanto",
   "author": "Rich Harris",
   "license": "MIT",
@@ -14,6 +14,7 @@
     "gobble-plugin"
   ],
   "files": [
-    "index.js"
+    "index.js",
+    "README.md"
   ]
 }
