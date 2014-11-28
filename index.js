@@ -18,6 +18,10 @@ module.exports = function esperantoBundle ( inputdir, outputdir, options ) {
 	options.base = path.join( inputdir, options.base || '' );
 	dest = ( options.dest || options.entry ).replace( /\.js$/, '' ) + '.js';
 
+	if ( !options.hasOwnProperty( 'sourceMap' ) ) {
+		options.sourceMap = true;
+	}
+
 	if ( options.sourceMap ) {
 		options.sourceMapFile = dest;
 	}
