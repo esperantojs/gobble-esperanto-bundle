@@ -1,5 +1,9 @@
 # changelog
 
+## 0.1.3
+
+* Update to esperanto 0.6.0
+
 ## 0.1.2
 
 * Create sourcemaps by default
