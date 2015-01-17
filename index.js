@@ -1,7 +1,8 @@
 var methods = {
 	amd: 'toAmd',
 	cjs: 'toCjs',
-	umd: 'toUmd'
+	umd: 'toUmd',
+	concat: 'concat'
 };
 
 module.exports = function esperantoBundle ( inputdir, outputdir, options ) {
