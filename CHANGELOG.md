@@ -1,5 +1,9 @@
 # changelog
 
+## 0.1.5
+
+* Add `concat` support
+
 ## 0.1.4
 
 * Update to esperanto 0.6.0
