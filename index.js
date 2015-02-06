@@ -19,7 +19,7 @@ module.exports = function esperantoBundle ( inputdir, outputdir, options ) {
 	dest = ( options.dest || options.entry ).replace( /\.js$/, '' ) + '.js';
 
 	if ( options.sourceMap ) {
-		options.sourceMapFile = dest;
+		options.sourceMapFile = path.join( outputdir, dest );
 	}
 
 	return esperanto.bundle( options ).then( function ( bundle ) {
