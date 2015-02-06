@@ -1,8 +1,20 @@
 # changelog
 
+## 0.1.6
+
+* Use absolute path for `options.sourceMapFile`
+
+## 0.1.5
+
+* Add `concat` support
+
+## 0.1.4
+
+* Update to esperanto 0.6.0
+
 ## 0.1.2
 
-* Use absolute paths for `options.sourceMapFile`
+* Create sourcemaps by default
 
 ## 0.1.1
 

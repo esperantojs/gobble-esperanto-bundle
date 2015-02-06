@@ -1,7 +1,8 @@
 var methods = {
 	amd: 'toAmd',
 	cjs: 'toCjs',
-	umd: 'toUmd'
+	umd: 'toUmd',
+	concat: 'concat'
 };
 
 module.exports = function esperantoBundle ( inputdir, outputdir, options ) {
@@ -17,6 +18,10 @@ module.exports = function esperantoBundle ( inputdir, outputdir, options ) {
 
 	options.base = path.join( inputdir, options.base || '' );
 	dest = ( options.dest || options.entry ).replace( /\.js$/, '' ) + '.js';
+
+	if ( !options.hasOwnProperty( 'sourceMap' ) ) {
+		options.sourceMap = true;
+	}
 
 	if ( options.sourceMap ) {
 		options.sourceMapFile = path.join( outputdir, dest );
