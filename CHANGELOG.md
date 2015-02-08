@@ -1,5 +1,9 @@
 # changelog
 
+## 0.1.6
+
+* Update to esperanto 0.6.11, which supports bundling external ES6 modules
+
 ## 0.1.5
 
 * Add `concat` support
