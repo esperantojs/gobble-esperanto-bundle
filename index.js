@@ -24,7 +24,7 @@ module.exports = function esperantoBundle ( inputdir, outputdir, options ) {
 	}
 
 	if ( options.sourceMap ) {
-		options.sourceMapFile = dest;
+		options.sourceMapFile = path.join( outputdir, dest );
 	}
 
 	return esperanto.bundle( options ).then( function ( bundle ) {
