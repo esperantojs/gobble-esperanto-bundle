@@ -1,12 +1,12 @@
 {
   "name": "gobble-esperanto-bundle",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Bundle ES6 modules with gobble and esperanto",
   "author": "Rich Harris",
   "license": "MIT",
   "repository": "https://github.com/gobblejs/gobble-esperanto-bundle",
   "dependencies": {
-    "esperanto": "^0.6.11",
+    "esperanto": "^0.7.0",
     "sander": "^0.2.1"
   },
   "keywords": [

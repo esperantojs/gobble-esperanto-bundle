@@ -1,5 +1,9 @@
 # changelog
 
+## 0.2.0
+
+* Update to esperanto 0.7.0
+
 ## 0.1.7
 
 * Update to esperanto 0.6.11, which supports bundling external ES6 modules
