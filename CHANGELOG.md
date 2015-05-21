@@ -1,5 +1,9 @@
 # changelog
 
+## 0.2.1
+
+* Update to sander 0.3.4
+
 ## 0.2.0
 
 * Update to esperanto 0.7.0
